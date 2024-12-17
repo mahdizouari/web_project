@@ -1,3 +1,6 @@
+
+    
+    
     document.addEventListener('DOMContentLoaded', () => {
         const navLinks = document.querySelectorAll('nav ul li a');
         
@@ -51,3 +54,6 @@
         }
         typing();
     }
+
+
+    

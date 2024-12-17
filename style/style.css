@@ -248,7 +248,6 @@
     padding: 60px;
     text-align: center;
     font-family: 'Arial', sans-serif;
-    border-top: 5px solid #00ff00; /* Green accent line */
     box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
 }
 
@@ -381,7 +380,6 @@
     padding: 3.85em;
     text-align: center;
     font-family: 'Courier New', Courier, monospace; /* Monospaced font */
-    border-top: 5px solid #00ff00; /* Green accent line */
     box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
         flex-direction: column;
     justify-content: center; /* Center content vertically */
@@ -506,7 +504,6 @@
 .experience-section {
     padding: 60px;
     background: rgba(0, 0, 0, 0.9);
-    border-top: 5px solid #00ff00;
     text-align: center;
 }
 

@@ -3,43 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Website</title>
+    <title>Quiz - Hacker Theme</title>
     <link rel="stylesheet" href="../style/style.css">
-    
-</head> 
-    </style>
+   
+</head>
 <body>
-    <!-- Navigation Menu -->
-    <nav>
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="academic.html">Academic Background</a></li>
-            <li><a href="skills.html">Technical Skills</a></li>
-            <li><a href="experience.html">Work Experience</a></li>
-            <li><a href="hobbies.html">Hobbies</a></li>
-            <li><a href="quiz.html">Quiz</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="testimonial.html">Testimonial</a></li>
-        </ul>
-    </nav>
+    <h1>Quiz Time !</h1>
+    <button id="start-quiz">Play</button>
+    <a href="../index.html" id="go-home">Go Home</a>
 
-    <!-- Home Page Content -->
-    <section id="home">
-        <img src="../images/background.png" alt="">
-               <div id="social-media">
-            <a href="https://www.facebook.com" target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
-            <a href="https://www.instagram.com" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
-            <a href="https://www.whatsapp.com" target="_blank"><img src="images/whatsapp.png" alt="WhatsApp"></a>
-            <a href="https://www.linkedin.com" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"></a>
-            <a href="https://www.tiktok.com" target="_blank"><img src="images/tiktok.png" alt="TikTok"></a>
+    
+    <div id="quiz-container">
+        <div id="progress-bar"></div>
+        <div id="question-container">
+            <p class="question"></p>
+            <div class="options"></div>
         </div>
-    </section>
+        <p id="score-display">Score: 0</p>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Personal Website | Designed with dedication and passion. Stay connected through my journey of growth and achievements.</p>
-    </footer>
+    <div id="result-container">
+        <h2 id="result-text"></h2>
+        <button id="play-again">Try Again</button>
+    </div>
+
+   
 </body>
 </html>
-<script src="../javascript/script.js" ></script>
+<style>
+    /* Hacker Theme Styles */
+    body {
+        background-color: black;
+        color: #00ff00;
+        font-family: 'Courier New', Courier, monospace;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+    }
 
+    h1 {
+    font-size: 4rem; /* Increased font size */
+    text-align: center;
+    margin-bottom: 20px;
+    color: green; /* Changed text color to green */
+    animation: grow 2s infinite, glow 1.5s infinite alternate; /* Added animation */
+    text-shadow: 0 0 10px green, 0 0 20px green, 0 0 30px green; /* Added glowing effect */
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px green, 0 0 10px green, 0 0 15px green;
+    }
+    100% {
+        text-shadow: 0 0 20px green, 0 0 30px green, 0 0 40px green;
+    }
+}
+
+    #quiz-container {
+        display: none;
+        text-align: center;
+        width: 50%;
+    }
+
+    .question-container {
+        display: none;
+    }
+
+    .question {
+        margin: 15px 0;
+        font-size: 1.5rem;
+    }
+
+    .options button {
+        background-color: transparent;
+        border: 2px solid #00ff00;
+        color: #00ff00;
+        font-size: 1rem;
+        padding: 10px;
+        margin: 10px 0;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    .options button:hover {
+        background-color: #00ff00;
+        color: black;
+    }
+
+    #progress-bar {
+        height: 10px;
+        background-color: #00ff00;
+        width: 0;
+        margin-bottom: 20px;
+    }
+
+    #result-container {
+        display: none;
+    }
+
+    #play-again {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        border: 2px solid #00ff00;
+        background-color: transparent;
+        color: #00ff00;
+        font-family: 'Courier New', Courier, monospace;
+
+    }
+
+    #play-again:hover {
+        background-color: #00ff00;
+        color: black;
+    }
+
+    @keyframes well-done {
+        0%, 100% { transform: scale(1); color: #00ff00; }
+        50% { transform: scale(1.5); color: lime; }
+    }
+
+    .well-done {
+        animation: well-done 1s infinite;
+    }
+    #start-quiz {
+padding: 12px 35px;
+font-size: 1.5rem;
+font-weight: bold;
+border: 3px solid #00ff00;
+background-color: transparent;
+color: #00ff00;
+cursor: pointer;
+border-radius: 5px;
+margin: 10px 0;
+transition: 0.3s ease;
+font-family: 'Courier New', Courier, monospace;
+
+}
+
+#start-quiz:hover {
+background-color: #00ff00;
+color: black;
+}
+
+#go-home {
+    padding: 15px 30px;
+font-size: 1rem;
+font-weight: bold;
+border: 3px solid #00ff00;
+background-color: transparent;
+color: #00ff00;
+cursor: pointer;
+border-radius: 5px;
+margin: 20px 0;
+transition: 0.3s ease;
+font-family: 'Courier New', Courier, monospace;
+
+}
+
+#go-home:hover {
+background-color: #00ff00;
+color: black;
+}
+
+</style>
+<script>
+    const questions = [
+{ question: "What is the currency of Japan?", options: ["Yen", "Won", "Dollar", "Euro"], answer: 0 },
+{ question: "Which is the best-selling video game of all time?", options: ["Minecraft", "GTA V", "Tetris", "Call of Duty"], answer: 0 },
+{ question: "Which software is commonly used for video editing?", options: ["Photoshop", "Premiere Pro", "Word", "Excel"], answer: 1 },
+{ question: "Which country won the FIFA World Cup in 2018?", options: ["Germany", "France", "Brazil", "Argentina"], answer: 1 },
+{ question: "What is GDP?", options: ["Gross Domestic Product", "Global Development Plan", "Gross Daily Profit", "General Domestic Policy"], answer: 0 },
+{ question: "Who developed the game Fortnite?", options: ["Epic Games", "Valve", "EA", "Ubisoft"], answer: 0 },
+{ question: "Which file format is used for exporting edited videos?", options: [".mp4", ".jpg", ".txt", ".png"], answer: 0 },
+{ question: "Which player has won the most Ballon d'Or awards?", options: ["Cristiano Ronaldo", "Lionel Messi", "Zinedine Zidane", "Ronaldinho"], answer: 1 },
+{ question: "What does inflation mean?", options: ["Increase in prices", "Decrease in prices", "Increase in GDP", "Decrease in GDP"], answer: 0 },
+{ question: "Which gaming console is developed by Sony?", options: ["Xbox", "PlayStation", "Switch", "GameCube"], answer: 1 }
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+const startButton = document.getElementById("start-quiz");
+const quizContainer = document.getElementById("quiz-container");
+const questionContainer = document.getElementById("question-container");
+const progressBar = document.getElementById("progress-bar");
+const questionElement = document.querySelector(".question");
+const optionsContainer = document.querySelector(".options");
+const scoreDisplay = document.getElementById("score-display");
+const resultContainer = document.getElementById("result-container");
+const resultText = document.getElementById("result-text");
+const playAgainButton = document.getElementById("play-again");
+
+startButton.addEventListener("click", () => {
+startButton.style.display = "none";
+quizContainer.style.display = "block";
+showQuestion();
+});
+
+function showQuestion() {
+questionContainer.style.display = "block";
+const questionData = questions[currentQuestion];
+questionElement.textContent = questionData.question;
+optionsContainer.innerHTML = "";
+questionData.options.forEach((option, index) => {
+    const button = document.createElement("button");
+    button.textContent = option;
+    button.addEventListener("click", () => handleAnswer(index));
+    optionsContainer.appendChild(button);
+});
+
+// Progress bar animation
+const progress = ((currentQuestion + 1) / questions.length) * 100;
+progressBar.style.width = progress + "%";
+}
+
+function handleAnswer(selectedIndex) {
+const questionData = questions[currentQuestion];
+if (selectedIndex === questionData.answer) {
+    score++;
+    scoreDisplay.textContent = "Score: " + score;
+}
+
+currentQuestion++;
+
+if (currentQuestion < questions.length) {
+    showQuestion();
+} else {
+    showResult();
+}
+}
+
+function showResult() {
+quizContainer.style.display = "none";
+resultContainer.style.display = "block";
+if (score >= 5) {
+    resultText.textContent = "Well Done!";
+    resultText.classList.add("well-done");
+} else {
+    resultText.textContent = "Try Again!";
+}
+}
+
+playAgainButton.addEventListener("click", () => {
+resultContainer.style.display = "none";
+score = 0;
+currentQuestion = 0;
+scoreDisplay.textContent = "Score: 0";
+progressBar.style.width = "0%";
+startButton.style.display = "block";
+});
+    
+</script>
