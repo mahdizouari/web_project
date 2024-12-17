@@ -1,5 +1,5 @@
 
- 
+ // jarvis navbar
     document.addEventListener('DOMContentLoaded', () => {
         const navLinks = document.querySelectorAll('nav ul li a');
         
@@ -24,7 +24,7 @@
             const paragraph = document.getElementById('welcome-paragraph');
             paragraph.style.display = 'block';
             paragraph.classList.add('dust');
-        }, 1000); // Match the duration of the disappear animation
+        }, 1000); //dust didn't work
     });
 
 
@@ -37,7 +37,7 @@
             const paragraph = document.getElementById('welcome-paragraph');
             paragraph.style.display = 'block';
             typeWriter(paragraph, "Hello! I am Mehdi Zouari. An IT engineer committed to excellence in technology and innovation. Constantly seeking opportunities to grow, learn, and contribute to impactful projects, I am focused on leveraging technology to create a better future.");
-        }, 400); // Match the duration of the disappear animation
+        }, 400); 
     });
     
     function typeWriter(element, text) {
@@ -46,9 +46,9 @@
             if (i < text.length) {
                 element.innerHTML += text.charAt(i);
                 i++;
-                setTimeout(typing, 40); // Adjust typing speed here
+                setTimeout(typing, 40); 
             } else {
-                element.style.borderRight = 'none'; // Remove cursor after typing
+                element.style.borderRight = 'none'; 
             }
         }
         typing();

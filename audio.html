@@ -12,20 +12,33 @@
     </audio>
 
     <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const audio = document.getElementById('background-audio');
-            const savedTime = localStorage.getItem('audioTime');
+       document.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('background-audio');
+    const savedTime = localStorage.getItem('audioTime');
 
-            if (savedTime) {
-                audio.currentTime = savedTime;
-            }
+    
+    const isHomePage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/';
 
-            audio.play();
+    
+    if (isHomePage) {
+        audio.currentTime = 0; 
+    } else if (savedTime) {
+        audio.currentTime = savedTime; 
+    }
 
-            audio.addEventListener('timeupdate', () => {
-                localStorage.setItem('audioTime', audio.currentTime);
-            });
-        });
+    audio.play();
+
+    audio.addEventListener('timeupdate', () => {
+        localStorage.setItem('audioTime', audio.currentTime);
+    });
+
+    
+    audio.addEventListener('ended', () => {
+        audio.currentTime = 0; 
+        audio.play(); 
+    });
+});
+
     </script>
 </body>
 </html>
