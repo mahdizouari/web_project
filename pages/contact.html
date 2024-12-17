@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="../style/style.css">
+  
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="academic.html">Academic Background</a></li>
+            <li><a href="skills.html">Technical Skills</a></li>
+            <li><a href="experience.html">Work Experience</a></li>
+            <li><a href="hobbies.html">Hobbies</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="testimonial.html">Testimonial</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contact Page Content -->
+    <section>
+        <h1>Contact Me</h1>
+        <p>If you have any questions, suggestions, or just want to connect, feel free to send me a message using the form below!</p>
+        <form action="https://formspree.io/f/mkgnlbla" method="POST">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" placeholder="Write your message here" rows="5" required></textarea>
+            
+            <!-- Submit Button -->
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Personal Website | Designed with dedication and passion. Stay connected through my journey of growth and achievements.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../javascript/script.js"></script>
+</body>
+</html>
+<style>
+    body {
+    background: #121212;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+}
+section {
+    margin: 156px auto;
+    max-width: 600px;
+    text-align: center;
+}
+h1 {
+    font-size: 2.8em;
+    margin-bottom: 17px;
+    background: linear-gradient(90deg, #00ff00, #ffffff, #00ff00); /* Gradient effect */
+    -webkit-background-clip: text; /* Ensures gradient applies to text */
+    -webkit-text-fill-color: transparent; /* Makes text background visible */
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; /* Adds glow */
+    animation: shine 3s linear infinite; /* Optional: Animates the shine */
+}
+
+
+p {
+    margin-bottom: 20px;
+}
+form {
+    background: rgba(20, 20, 20, 0.8);
+    padding: 67px;
+    border: 1px solid #00ff00;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+}
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #00ff00;
+    border-radius: 4px;
+    background: #121212;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+}
+input::placeholder, textarea::placeholder {
+    color: rgba(0, 255, 0, 0.7);
+}
+button {
+    background: #00ff00;
+    color: #121212;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+button:hover {
+    background: #008000;
+}
+</style>
