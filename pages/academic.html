@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Website</title>
     <link rel="stylesheet" href="../style/style.css">
+    <iframe src="../audio.html" style="display:none;"></iframe>
+
 </head>
 <body>
     <!-- Navigation Menu -->
@@ -23,8 +25,10 @@
 
     <!-- Academic Journey Section -->
     <section id="academic" class="academic-section">
-        <h2>My Academic Journey</h2>
+       
 
+        <h2>My Academic Journey</h2>
+       
         <div class="timeline">
             <!-- Bac Entry -->
             <div class="timeline-item">
@@ -56,4 +60,129 @@
     </footer>
 </body>
 </html>
+<style>
+    .academic-section {
+        background: rgba(0, 0, 0, 0.9); /* Dark background */
+    color: #ffffff;
+    padding: 80px;
+    
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+        flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center;
+    min-height: 15px; /* Ensures the section takes full viewport height */
+}
+
+.academic-section h2 {
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    color: #00ff00; /* Green accent */
+    text-shadow: 0 0 10px #00ff00;
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+
+}
+
+/* Timeline Container */
+.timeline {
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 800px;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, #00ff00, #004400);
+    transform: translateX(-50%);
+}
+
+/* Timeline Items */
+.timeline-item {
+    position: relative;
+    margin: 40px 0;
+}
+
+.timeline-date {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #00ff00;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -31px;
+    background: #333;
+    padding: 1px 12px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #00ff00;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.timeline-content {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border: 1px solid #00ff00;
+    border-radius: 10px;
+    width: 45%;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+.timeline-content h3 {
+    font-size: 1.7em;
+    margin-bottom: 15px;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+
+}
+
+.timeline-content p {
+    margin: 0;
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #e0e0e0;
+}
+
+/* Alternate Timeline Content Positions */
+.timeline-item:nth-child(even) .timeline-content {
+    left: 55%;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    left: 0;
+}
+
+/* Hover Effects */
+.timeline-content:hover {
+    box-shadow: 0 0 25px #00ff00, 0 0 40px #00ff00;
+    transform: translateY(-10px) scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content,
+    .timeline-item:nth-child(odd) .timeline-content {
+        width: 80%;
+        left: 10%;
+    }
+
+    .timeline-date {
+        left: 20px;
+        transform: none;
+    }
+}
+</style>
 <script src="../javascript/script.js"></script>

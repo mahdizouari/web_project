@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technical Skills</title>
     <link rel="stylesheet" href="../style/style.css">
+    <div id="audio-container">
+        <iframe src="../audio.html" style="display:none;"></iframe>
+
+    </div>
 </head>
 <body>
     <!-- Navigation Menu -->
@@ -23,6 +27,7 @@
 
     <!-- Technical Skills Section -->
     <section class="skills-section">
+        
         <h2>Technical Skills</h2>
         <p class="skills-intro">
             Over the years, I have acquired a diverse set of technical skills, enabling me to work on complex projects efficiently. Below is a showcase of my expertise:
@@ -83,3 +88,137 @@
     </footer>
 </body>
 </html>
+<style>
+    .skills-intro {
+    font-size: 1.2em;
+    color: #00ff00;
+    margin-bottom: 0px;
+    max-width: 800px;
+    margin: -20px auto 40px;
+    line-height: 1.6;
+    text-shadow: 0 0 5px #00ff00;
+}
+    
+
+/* Main container for the skills section to take full height */
+.skills-section {
+    background: rgba(0, 0, 0, 0.9); /* Dark background */
+    color: #ffffff;
+    padding: 80px;
+    
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center;
+    min-height: 15px; /* Ensures the section takes full viewport height */
+}
+
+.skills-section h2 {
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, #00ff00, #ffffff, #00ff00); /* Gradient effect */
+    -webkit-background-clip: text; /* Ensures gradient applies to text */
+    -webkit-text-fill-color: transparent; /* Makes text background visible */
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; /* Adds glow */
+    animation: shine 3s linear infinite; /* Optional: Animates the shine */
+}
+
+/* Optional: Animation for a subtle shine effect */
+@keyframes shine {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+
+/* Skills container with centered items */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    width: 100%;
+    max-width: 1200px; /* Optional: Limits container width */
+    margin: 0 auto;
+    padding: 70px 20px;
+    box-sizing: border-box;
+}
+
+/* Individual skill items */
+.skill-item {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.skill-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
+    
+}
+
+.skill-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.skill-item p {
+    font-size: 1em;
+    color: #00ff00; /* Green accent */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skill-item {
+    position: relative;
+    width: 100px;
+    text-align: center;
+    margin: 10px;
+    transition: filter 0.3s ease;
+}
+
+.skill-item img {
+    width: 50px;
+    transition: transform 0.3s ease, width 0.3s ease;
+}
+
+.skill-item:hover img {
+    transform: translateY(-40px);
+    width: 70px;
+    height: 70px; /* Make the image bigger */
+}
+
+.skills-container:hover .skill-item {
+    filter: blur(2px); /* Blur all items */
+}
+
+.skills-container .skill-item:hover {
+    filter: none; /* Keep the hovered item clear */
+}
+</style>

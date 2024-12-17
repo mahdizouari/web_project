@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player</title>
+</head>
+<body>
+    <audio id="background-audio" controls>
+        <source src="matrix.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const audio = document.getElementById('background-audio');
+            const savedTime = localStorage.getItem('audioTime');
+
+            if (savedTime) {
+                audio.currentTime = savedTime;
+            }
+
+            audio.play();
+
+            audio.addEventListener('timeupdate', () => {
+                localStorage.setItem('audioTime', audio.currentTime);
+            });
+        });
+    </script>
+</body>
+</html>
