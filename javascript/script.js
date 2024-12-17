@@ -1,19 +1,5 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-    const audio = document.getElementById('background-audio');
-    const savedTime = localStorage.getItem('audioTime');
 
-    if (savedTime) {
-        audio.currentTime = savedTime;
-    }
-
-    audio.play();
-
-    audio.addEventListener('timeupdate', () => {
-        localStorage.setItem('audioTime', audio.currentTime);
-    });
-});
-
-
+ 
     document.addEventListener('DOMContentLoaded', () => {
         const navLinks = document.querySelectorAll('nav ul li a');
         
@@ -68,7 +54,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         typing();
     }
 
-   
     
 
 
