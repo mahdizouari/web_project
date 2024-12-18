@@ -56,7 +56,7 @@
         }
         
         nav ul li a:hover {
-            color: #00ff00; /* Change text color to green on hover */
+            color: #00ff00; 
         }
         
         nav ul li a::before {
@@ -143,20 +143,20 @@
 
         #social-media {
             display: flex;
-            justify-content: center; /* Center the icons horizontally */
-            margin-top: relative; /* Add some space above the icons */
+            justify-content: center; /*  icons horizontal */
+            margin-top: relative; /* space above   icons */
             position: relative;
             z-index: 2;
         }
         
         #social-media a {
-            margin: 0 10px; /* Add space between the icons */
-            transition: transform 0.3s ease; /* Smooth hover effect */
+            margin: 0 10px; /* space between t icons */
+            transition: transform 0.3s ease; /*  hover effect */
         }
         
         #social-media img {
-            width: 40px; /* Set the width of the icons */
-            height: auto; /* Maintain the aspect ratio */
+            width: 40px; 
+            height: auto;
             transition: filter 0.3s ease; /* Smooth hover effect */
         }
         
@@ -190,8 +190,8 @@
         #welcome-heading {
             cursor: pointer;
             font-size: 2em; /* Increase heading size */
-            text-align: center; /* Center the heading */
-            margin-bottom: 20px; /* Add space below the heading */
+            text-align: center; 
+            margin-bottom: 20px; 
             animation: comeOut 4s ease-out; /* Animate the heading to come out */
             transition: color 0.3s, text-shadow 0.3s; /* Smooth transition for hover effects */
             font-family: 'Courier New', Courier, monospace; /* Monospaced font */
